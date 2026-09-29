@@ -5,24 +5,19 @@ pipeline {
         stage('Descargar proyecto') {
             steps {
                 git branch: 'feature/calculadora',
-                    credentialsId: 'github-psw-read',
-                    url: 'https://github.com/VicenteLopezJ/PSW_Jenkins.git'
+                    url: 'https://github.com'
             }
         }
 
         stage('Proyecto Java/Maven') {
             steps {
-                dir('S09-Slack') {
-                    bat 'mvn clean compile'
-                }
+                bat 'mvn clean compile'
             }
         }
 
         stage('Pruebas') {
             steps {
-                dir('S09-Slack') {
-                    bat 'mvn clean test'
-                }
+                bat 'mvn test'
             }
         }
     }
