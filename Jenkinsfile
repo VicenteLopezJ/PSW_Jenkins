@@ -5,7 +5,7 @@ pipeline {
         stage('Descargar proyecto') {
             steps {
                 git branch: 'feature/calculadora',
-                    url: 'https://github.com'
+                    url: 'https://github.com/VicenteLopezJ/PSW_Jenkins.git'
             }
         }
 
