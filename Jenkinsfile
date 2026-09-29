@@ -10,6 +10,14 @@ pipeline {
             }
         }
 
+        stage('Proyecto Java/Maven') {
+            steps {
+                dir('S09-Slack') {
+                    bat 'mvn clean compile'
+                }
+            }
+        }
+
         stage('Pruebas') {
             steps {
                 dir('S09-Slack') {
